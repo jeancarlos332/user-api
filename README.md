@@ -46,3 +46,8 @@ PORT=5000
 MONGO_URI=mongodb://mongo:27017/userdb
 JWT_SECRET=miclaveultrasecreta
 TOKEN_EXPIRE=1d
+```
+
+### URL API expuesta
+
+La api se encuentra expuesta en la siguiente URL pública : https://user-api-k93q.onrender.com/ 
