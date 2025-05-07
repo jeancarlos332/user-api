@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  mongo:
+    image: mongo
+    container_name: mongodb
+    ports:
+      - "27017:27017" 
+    volumes:
+      - mongo-data:/data/db
+
+  backend:
+    build: .  
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGO_URI=mongodb+srv://admin:admin123@cluster0.flk9em2.mongodb.net/usersdb?retryWrites=true&w=majority&appName=Cluster0  # Conexión de la API a MongoDB
+      - JWT_SECRET=miclaveultrasecreta
+      - TOKEN_EXPIRE=1d
+    depends_on:
+      - mongo 
+
+volumes:
+  mongo-data: 
